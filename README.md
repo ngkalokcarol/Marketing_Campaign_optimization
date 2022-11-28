@@ -1,14 +1,8 @@
-# Marketing_Campaign_optimization
+# Marketing Call Activity Optimization
 
 ### Detail task description
 
-1. You are a Quantitative Analytics Specialist. A critical part of this position is to analyze data for trends, build models, generate insights, and summarize your conclusions.
-<br><br>
-2. The accompanying data file (i.e. Marketing Capaign Data) contains data related to direct marketing campaigns of a Portuguese banking institution. These marketing campaigns were conducted via phone calls that were focused on selling a term deposit product (i.e. CD). 
-<br><br>
-3. Your task is to conduct an exploratory data analysis and develop a classification model for optimizing sales call activity. The optimal model will minimize classification error. Please use Python to prepare your analysis and develop your predictive models.
-<br><br>
-4. You will also need to prepare a presentation for senior marketing strategists containing your exploratory data analysis and insights, details of the 2-3 techniques you tested (including a description of the technique and why you chose it), as well as a summary of your work and final recommendations.
+Find the best strategies to improve for the next marketing campaign. How can the financial institution have a greater effectiveness for future marketing campaigns? In order to answer this, we have to analyze the last marketing campaign the bank performed and identify the patterns that will help us find conclusions in order to develop future strategies.
 
 ### Loading Required Libraries
 
@@ -481,7 +475,7 @@ plt.axis('square');
 
 
     
-![png](output_18_0.png)
+![png](output_17_0.png)
     
 
 
@@ -500,7 +494,7 @@ plt.axis('square');
 
 
     
-![png](output_19_0.png)
+![png](output_18_0.png)
     
 
 
@@ -520,8 +514,7 @@ df = df.dropna()
 # Convert numberic data to int data type
 
 df['age'] = df['age'].astype(int)
-df['balance'] = df['balance'].astype
-(int)
+df['balance'] = df['balance'].astype(int)
 df['day'] = df['day'].astype(int)
 df['duration'] = df['duration'].astype(int)
 df['campaign'] = df['campaign'].astype(int)
@@ -578,7 +571,7 @@ df.info()
      2   marital    34592 non-null  object
      3   education  34592 non-null  object
      4   default    34592 non-null  object
-     5   balance    34592 non-null  object
+     5   balance    34592 non-null  int64 
      6   housing    34592 non-null  object
      7   loan       34592 non-null  object
      8   contact    34592 non-null  object
@@ -590,7 +583,7 @@ df.info()
      14  previous   34592 non-null  int64 
      15  poutcome   34592 non-null  object
      16  y          34592 non-null  int64 
-    dtypes: int64(8), object(9)
+    dtypes: int64(9), object(8)
     memory usage: 4.8+ MB
 
 
@@ -631,7 +624,6 @@ numeric.describe()
     <tr style="text-align: right;">
       <th></th>
       <th>age</th>
-      <th>balance</th>
       <th>day</th>
       <th>month</th>
       <th>duration</th>
@@ -652,12 +644,10 @@ numeric.describe()
       <td>34592.000000</td>
       <td>34592.000000</td>
       <td>34592.000000</td>
-      <td>34592.000000</td>
     </tr>
     <tr>
       <th>mean</th>
       <td>40.683482</td>
-      <td>1328.956551</td>
       <td>15.929290</td>
       <td>6.103579</td>
       <td>256.687616</td>
@@ -669,7 +659,6 @@ numeric.describe()
     <tr>
       <th>std</th>
       <td>10.161207</td>
-      <td>2981.186718</td>
       <td>8.314277</td>
       <td>2.359264</td>
       <td>258.742139</td>
@@ -681,7 +670,6 @@ numeric.describe()
     <tr>
       <th>min</th>
       <td>18.000000</td>
-      <td>-8019.000000</td>
       <td>1.000000</td>
       <td>1.000000</td>
       <td>0.000000</td>
@@ -693,7 +681,6 @@ numeric.describe()
     <tr>
       <th>25%</th>
       <td>33.000000</td>
-      <td>66.000000</td>
       <td>8.000000</td>
       <td>5.000000</td>
       <td>102.000000</td>
@@ -705,7 +692,6 @@ numeric.describe()
     <tr>
       <th>50%</th>
       <td>39.000000</td>
-      <td>437.000000</td>
       <td>16.000000</td>
       <td>6.000000</td>
       <td>178.000000</td>
@@ -717,7 +703,6 @@ numeric.describe()
     <tr>
       <th>75%</th>
       <td>48.000000</td>
-      <td>1387.000000</td>
       <td>21.000000</td>
       <td>7.000000</td>
       <td>317.000000</td>
@@ -729,7 +714,6 @@ numeric.describe()
     <tr>
       <th>max</th>
       <td>95.000000</td>
-      <td>98417.000000</td>
       <td>31.000000</td>
       <td>12.000000</td>
       <td>4918.000000</td>
@@ -767,7 +751,7 @@ plt.axis('square');
 
 
     
-![png](output_29_0.png)
+![png](output_28_0.png)
     
 
 
@@ -789,7 +773,7 @@ plt.show()
 
 
     
-![png](output_32_0.png)
+![png](output_31_0.png)
     
 
 
@@ -810,7 +794,7 @@ plt.show()
 
 
     
-![png](output_34_0.png)
+![png](output_33_0.png)
     
 
 
@@ -992,7 +976,7 @@ plt.show()
 
 
     
-![png](output_41_0.png)
+![png](output_40_0.png)
     
 
 
@@ -1162,7 +1146,7 @@ plt.show()
 
 
     
-![png](output_46_0.png)
+![png](output_45_0.png)
     
 
 
@@ -1172,7 +1156,7 @@ plt.show()
 
 
 ```python
-balance = numeric[['balance','y']]
+balance_group = numeric[['balance','y']]
 balance_group = [balance]
 
 for column in balance_group:
@@ -1256,35 +1240,11 @@ plt.show()
 
 
     
-![png](output_51_0.png)
+![png](output_50_0.png)
     
 
 
-<b> Observations: The variations in conversion rate per account balance is not quite apparent, most of the balance groups have a 15-18% conversion rate. 
-
-
-```python
-neg = balance[balance['balance_group'] == 'Negative Balance']
-bal_500 = balance[balance['balance_group'] == '0-500']
-bal_1500 = balance[balance['balance_group'] == '501-1500']
-bal_3000 = balance[balance['balance_group'] == '1501-3000']
-above3001 = balance[balance['balance_group'] == 'Over 3001']
-
-neg_yes = neg[neg['y'] == 1].count()[0]
-neg_no = neg[neg['y'] == 0].count()[0]
-
-bal_500_yes = bal_500[bal_500['y'] == 1].count()[0]
-bal_500_no = bal_500[bal_500['y'] == 0].count()[0]
-
-bal_1500_yes = bal_1500[bal_1500['y'] == 1].count()[0]
-bal_1500_no = bal_1500[bal_1500['y'] == 0].count()[0]
-
-bal_3000_yes = bal_3000[bal_3000['y'] == 1].count()[0]
-bal_3000_no = bal_3000[bal_3000['y'] == 0].count()[0]
-
-above3001_yes = above3001[above3001['y'] == 1].count()[0]
-above3001_no = above3001[above3001['y'] == 0].count()[0]
-```
+<b> Observations: The variations in conversion rate per account balance is not quite apparent, most of the balance groups have a 15-18% conversion rate. the more the balance, the higher the conversion rate.
 
 #### 3.2.4 Conversion rate of 'Job category'
 
@@ -1505,7 +1465,7 @@ plt.show()
 
 
     
-![png](output_58_0.png)
+![png](output_56_0.png)
     
 
 
@@ -1624,469 +1584,54 @@ plt.show()
 
 
     
-![png](output_64_0.png)
+![png](output_62_0.png)
     
 
 
+<b> Observations: Customers tend to buy the term deposit when they do not have a housing loan, but the conversion difference is only around 5%. 
+
 
 ```python
-df
+py_df = y_df[y_df['poutcome'] != 'unknown']
+pp_df = df[df['poutcome'] != 'unknown']
 ```
 
 
-    ---------------------------------------------------------------------------
-
-    RecursionError                            Traceback (most recent call last)
-
-    ~/opt/anaconda3/lib/python3.9/site-packages/IPython/core/formatters.py in __call__(self, obj)
-        700                 type_pprinters=self.type_printers,
-        701                 deferred_pprinters=self.deferred_printers)
-    --> 702             printer.pretty(obj)
-        703             printer.flush()
-        704             return stream.getvalue()
-
-
-    ~/opt/anaconda3/lib/python3.9/site-packages/IPython/lib/pretty.py in pretty(self, obj)
-        392                         if cls is not object \
-        393                                 and callable(cls.__dict__.get('__repr__')):
-    --> 394                             return _repr_pprint(obj, self, cycle)
-        395 
-        396             return _default_pprint(obj, self, cycle)
-
-
-    ~/opt/anaconda3/lib/python3.9/site-packages/IPython/lib/pretty.py in _repr_pprint(obj, p, cycle)
-        698     """A pprint that just redirects to the normal repr function."""
-        699     # Find newlines and replace them with p.break_()
-    --> 700     output = repr(obj)
-        701     lines = output.splitlines()
-        702     with p.group():
-
-
-    ~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/frame.py in __repr__(self)
-        993         else:
-        994             width = None
-    --> 995         self.to_string(
-        996             buf=buf,
-        997             max_rows=max_rows,
-
-
-    ~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/frame.py in to_string(self, buf, columns, col_space, header, index, na_rep, formatters, float_format, sparsify, index_names, justify, max_rows, min_rows, max_cols, show_dimensions, decimal, line_width, max_colwidth, encoding)
-       1129                 decimal=decimal,
-       1130             )
-    -> 1131             return fmt.DataFrameRenderer(formatter).to_string(
-       1132                 buf=buf,
-       1133                 encoding=encoding,
-
-
-    ~/opt/anaconda3/lib/python3.9/site-packages/pandas/io/formats/format.py in to_string(self, buf, encoding, line_width)
-       1051 
-       1052         string_formatter = StringFormatter(self.fmt, line_width=line_width)
-    -> 1053         string = string_formatter.to_string()
-       1054         return save_to_buffer(string, buf=buf, encoding=encoding)
-       1055 
-
-
-    ~/opt/anaconda3/lib/python3.9/site-packages/pandas/io/formats/string.py in to_string(self)
-         23 
-         24     def to_string(self) -> str:
-    ---> 25         text = self._get_string_representation()
-         26         if self.fmt.should_show_dimensions:
-         27             text = "".join([text, self.fmt.dimensions_info])
-
-
-    ~/opt/anaconda3/lib/python3.9/site-packages/pandas/io/formats/string.py in _get_string_representation(self)
-         38             return self._empty_info_line
-         39 
-    ---> 40         strcols = self._get_strcols()
-         41 
-         42         if self.line_width is None:
-
-
-    ~/opt/anaconda3/lib/python3.9/site-packages/pandas/io/formats/string.py in _get_strcols(self)
-         29 
-         30     def _get_strcols(self) -> list[list[str]]:
-    ---> 31         strcols = self.fmt.get_strcols()
-         32         if self.fmt.is_truncated:
-         33             strcols = self._insert_dot_separators(strcols)
-
-
-    ~/opt/anaconda3/lib/python3.9/site-packages/pandas/io/formats/format.py in get_strcols(self)
-        538         Render a DataFrame to a list of columns (as lists of strings).
-        539         """
-    --> 540         strcols = self._get_strcols_without_index()
-        541 
-        542         if self.index:
-
-
-    ~/opt/anaconda3/lib/python3.9/site-packages/pandas/io/formats/format.py in _get_strcols_without_index(self)
-        802                 int(self.col_space.get(c, 0)), *(self.adj.len(x) for x in cheader)
-        803             )
-    --> 804             fmt_values = self.format_col(i)
-        805             fmt_values = _make_fixed_width(
-        806                 fmt_values, self.justify, minimum=header_colwidth, adj=self.adj
-
-
-    ~/opt/anaconda3/lib/python3.9/site-packages/pandas/io/formats/format.py in format_col(self, i)
-        816         frame = self.tr_frame
-        817         formatter = self._get_formatter(i)
-    --> 818         return format_array(
-        819             frame.iloc[:, i]._values,
-        820             formatter,
-
-
-    ~/opt/anaconda3/lib/python3.9/site-packages/pandas/io/formats/format.py in format_array(values, formatter, float_format, na_rep, digits, space, justify, decimal, leading_space, quoting)
-       1238     )
-       1239 
-    -> 1240     return fmt_obj.get_result()
-       1241 
-       1242 
-
-
-    ~/opt/anaconda3/lib/python3.9/site-packages/pandas/io/formats/format.py in get_result(self)
-       1269 
-       1270     def get_result(self) -> list[str]:
-    -> 1271         fmt_values = self._format_strings()
-       1272         return _make_fixed_width(fmt_values, self.justify)
-       1273 
-
-
-    ~/opt/anaconda3/lib/python3.9/site-packages/pandas/io/formats/format.py in _format_strings(self)
-       1332         for i, v in enumerate(vals):
-       1333             if not is_float_type[i] and leading_space:
-    -> 1334                 fmt_values.append(f" {_format(v)}")
-       1335             elif is_float_type[i]:
-       1336                 fmt_values.append(float_format(v))
-
-
-    ~/opt/anaconda3/lib/python3.9/site-packages/pandas/io/formats/format.py in _format(x)
-       1312             else:
-       1313                 # object dtype
-    -> 1314                 return str(formatter(x))
-       1315 
-       1316         vals = extract_array(self.values, extract_numpy=True)
-
-
-    ~/opt/anaconda3/lib/python3.9/site-packages/pandas/io/formats/printing.py in pprint_thing(thing, _nest_lvl, escape_chars, default_escapes, quote_strings, max_seq_items)
-        231         result = f"'{as_escaped_string(thing)}'"
-        232     else:
-    --> 233         result = as_escaped_string(thing)
-        234 
-        235     return result
-
-
-    ~/opt/anaconda3/lib/python3.9/site-packages/pandas/io/formats/printing.py in as_escaped_string(thing, escape_chars)
-        207             escape_chars = escape_chars or ()
-        208 
-    --> 209         result = str(thing)
-        210         for c in escape_chars:
-        211             result = result.replace(c, translate[c])
-
-
-    ~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/series.py in __repr__(self)
-       1463         show_dimensions = get_option("display.show_dimensions")
-       1464 
-    -> 1465         self.to_string(
-       1466             buf=buf,
-       1467             name=self.name,
-
-
-    ~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/series.py in to_string(self, buf, na_rep, float_format, header, index, length, dtype, name, max_rows, min_rows)
-       1532             max_rows=max_rows,
-       1533         )
-    -> 1534         result = formatter.to_string()
-       1535 
-       1536         # catch contract violations
-
-
-    ~/opt/anaconda3/lib/python3.9/site-packages/pandas/io/formats/format.py in to_string(self)
-        389 
-        390         fmt_index, have_header = self._get_formatted_index()
-    --> 391         fmt_values = self._get_formatted_values()
-        392 
-        393         if self.is_truncated_vertically:
-
-
-    ~/opt/anaconda3/lib/python3.9/site-packages/pandas/io/formats/format.py in _get_formatted_values(self)
-        373 
-        374     def _get_formatted_values(self) -> list[str]:
-    --> 375         return format_array(
-        376             self.tr_series._values,
-        377             None,
-
-
-    ... last 10 frames repeated, from the frame below ...
-
-
-    ~/opt/anaconda3/lib/python3.9/site-packages/pandas/io/formats/format.py in format_array(values, formatter, float_format, na_rep, digits, space, justify, decimal, leading_space, quoting)
-       1238     )
-       1239 
-    -> 1240     return fmt_obj.get_result()
-       1241 
-       1242 
-
-
-    RecursionError: maximum recursion depth exceeded while calling a Python object
-
-
-
-    ---------------------------------------------------------------------------
-
-    RecursionError                            Traceback (most recent call last)
-
-    ~/opt/anaconda3/lib/python3.9/site-packages/IPython/core/formatters.py in __call__(self, obj)
-        343             method = get_real_method(obj, self.print_method)
-        344             if method is not None:
-    --> 345                 return method()
-        346             return None
-        347         else:
-
-
-    ~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/frame.py in _repr_html_(self)
-       1045                 decimal=".",
-       1046             )
-    -> 1047             return fmt.DataFrameRenderer(formatter).to_html(notebook=True)
-       1048         else:
-       1049             return None
-
-
-    ~/opt/anaconda3/lib/python3.9/site-packages/pandas/io/formats/format.py in to_html(self, buf, encoding, classes, notebook, border, table_id, render_links)
-       1027             render_links=render_links,
-       1028         )
-    -> 1029         string = html_formatter.to_string()
-       1030         return save_to_buffer(string, buf=buf, encoding=encoding)
-       1031 
-
-
-    ~/opt/anaconda3/lib/python3.9/site-packages/pandas/io/formats/html.py in to_string(self)
-         70 
-         71     def to_string(self) -> str:
-    ---> 72         lines = self.render()
-         73         if any(isinstance(x, str) for x in lines):
-         74             lines = [str(x) for x in lines]
-
-
-    ~/opt/anaconda3/lib/python3.9/site-packages/pandas/io/formats/html.py in render(self)
-        619         self.write("<div>")
-        620         self.write_style()
-    --> 621         super().render()
-        622         self.write("</div>")
-        623         return self.elements
-
-
-    ~/opt/anaconda3/lib/python3.9/site-packages/pandas/io/formats/html.py in render(self)
-         76 
-         77     def render(self) -> list[str]:
-    ---> 78         self._write_table()
-         79 
-         80         if self.should_show_dimensions:
-
-
-    ~/opt/anaconda3/lib/python3.9/site-packages/pandas/io/formats/html.py in _write_table(self, indent)
-        246             self._write_header(indent + self.indent_delta)
-        247 
-    --> 248         self._write_body(indent + self.indent_delta)
-        249 
-        250         self.write("</table>", indent)
-
-
-    ~/opt/anaconda3/lib/python3.9/site-packages/pandas/io/formats/html.py in _write_body(self, indent)
-        393     def _write_body(self, indent: int) -> None:
-        394         self.write("<tbody>", indent)
-    --> 395         fmt_values = self._get_formatted_values()
-        396 
-        397         # write values
-
-
-    ~/opt/anaconda3/lib/python3.9/site-packages/pandas/io/formats/html.py in _get_formatted_values(self)
-        583 
-        584     def _get_formatted_values(self) -> dict[int, list[str]]:
-    --> 585         return {i: self.fmt.format_col(i) for i in range(self.ncols)}
-        586 
-        587     def _get_columns_formatted_values(self) -> list[str]:
-
-
-    ~/opt/anaconda3/lib/python3.9/site-packages/pandas/io/formats/html.py in <dictcomp>(.0)
-        583 
-        584     def _get_formatted_values(self) -> dict[int, list[str]]:
-    --> 585         return {i: self.fmt.format_col(i) for i in range(self.ncols)}
-        586 
-        587     def _get_columns_formatted_values(self) -> list[str]:
-
-
-    ~/opt/anaconda3/lib/python3.9/site-packages/pandas/io/formats/format.py in format_col(self, i)
-        816         frame = self.tr_frame
-        817         formatter = self._get_formatter(i)
-    --> 818         return format_array(
-        819             frame.iloc[:, i]._values,
-        820             formatter,
-
-
-    ~/opt/anaconda3/lib/python3.9/site-packages/pandas/io/formats/format.py in format_array(values, formatter, float_format, na_rep, digits, space, justify, decimal, leading_space, quoting)
-       1238     )
-       1239 
-    -> 1240     return fmt_obj.get_result()
-       1241 
-       1242 
-
-
-    ~/opt/anaconda3/lib/python3.9/site-packages/pandas/io/formats/format.py in get_result(self)
-       1269 
-       1270     def get_result(self) -> list[str]:
-    -> 1271         fmt_values = self._format_strings()
-       1272         return _make_fixed_width(fmt_values, self.justify)
-       1273 
-
-
-    ~/opt/anaconda3/lib/python3.9/site-packages/pandas/io/formats/format.py in _format_strings(self)
-       1332         for i, v in enumerate(vals):
-       1333             if not is_float_type[i] and leading_space:
-    -> 1334                 fmt_values.append(f" {_format(v)}")
-       1335             elif is_float_type[i]:
-       1336                 fmt_values.append(float_format(v))
-
-
-    ~/opt/anaconda3/lib/python3.9/site-packages/pandas/io/formats/format.py in _format(x)
-       1312             else:
-       1313                 # object dtype
-    -> 1314                 return str(formatter(x))
-       1315 
-       1316         vals = extract_array(self.values, extract_numpy=True)
-
-
-    ~/opt/anaconda3/lib/python3.9/site-packages/pandas/io/formats/printing.py in pprint_thing(thing, _nest_lvl, escape_chars, default_escapes, quote_strings, max_seq_items)
-        231         result = f"'{as_escaped_string(thing)}'"
-        232     else:
-    --> 233         result = as_escaped_string(thing)
-        234 
-        235     return result
-
-
-    ~/opt/anaconda3/lib/python3.9/site-packages/pandas/io/formats/printing.py in as_escaped_string(thing, escape_chars)
-        207             escape_chars = escape_chars or ()
-        208 
-    --> 209         result = str(thing)
-        210         for c in escape_chars:
-        211             result = result.replace(c, translate[c])
-
-
-    ~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/series.py in __repr__(self)
-       1463         show_dimensions = get_option("display.show_dimensions")
-       1464 
-    -> 1465         self.to_string(
-       1466             buf=buf,
-       1467             name=self.name,
-
-
-    ~/opt/anaconda3/lib/python3.9/site-packages/pandas/core/series.py in to_string(self, buf, na_rep, float_format, header, index, length, dtype, name, max_rows, min_rows)
-       1532             max_rows=max_rows,
-       1533         )
-    -> 1534         result = formatter.to_string()
-       1535 
-       1536         # catch contract violations
-
-
-    ~/opt/anaconda3/lib/python3.9/site-packages/pandas/io/formats/format.py in to_string(self)
-        389 
-        390         fmt_index, have_header = self._get_formatted_index()
-    --> 391         fmt_values = self._get_formatted_values()
-        392 
-        393         if self.is_truncated_vertically:
-
-
-    ~/opt/anaconda3/lib/python3.9/site-packages/pandas/io/formats/format.py in _get_formatted_values(self)
-        373 
-        374     def _get_formatted_values(self) -> list[str]:
-    --> 375         return format_array(
-        376             self.tr_series._values,
-        377             None,
-
-
-    ... last 10 frames repeated, from the frame below ...
-
-
-    ~/opt/anaconda3/lib/python3.9/site-packages/pandas/io/formats/format.py in format_array(values, formatter, float_format, na_rep, digits, space, justify, decimal, leading_space, quoting)
-       1238     )
-       1239 
-    -> 1240     return fmt_obj.get_result()
-       1241 
-       1242 
-
-
-    RecursionError: maximum recursion depth exceeded while calling a Python object
-
-
-
 ```python
-y_df
-```
-
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>age</th>
-      <th>job</th>
-      <th>marital</th>
-      <th>education</th>
-      <th>default</th>
-      <th>balance</th>
-      <th>housing</th>
-      <th>loan</th>
-      <th>contact</th>
-      <th>day</th>
-      <th>month</th>
-      <th>duration</th>
-      <th>campaign</th>
-      <th>pdays</th>
-      <th>previous</th>
-      <th>poutcome</th>
-      <th>y</th>
-    </tr>
-  </thead>
-  <tbody>
-  </tbody>
-</table>
-</div>
-
-
-
-
-```python
-ratio = y_df.job.value_counts()
+ratio = py_df.poutcome.value_counts()
 
 plt.figure(figsize = (4,4))
 
 plt.pie(ratio, autopct='%1.2f%%', 
-        pctdistance = 0.6, colors = ['#00EAFF', '#B2C1C3'],
-        startangle = 60, wedgeprops = {'width' : 0.65}, textprops={'fontsize': 14}, labels = job_category)
-plt.title('Customers who bought term deposit after the campaign call', fontdict = {'fontsize':'14'})
+        pctdistance = 0.6, colors = ['#00EAFF', '#9B9699', '#B2C1C3'],
+        startangle = 60, wedgeprops = {'width' : 0.65}, textprops={'fontsize': 14}, labels =  ['success','failure','other'])
+plt.title('Previous market campaign outcome', fontdict = {'fontsize':'14'})
 plt.axis('square');
 ```
 
 
     
-![png](output_67_0.png)
+![png](output_65_0.png)
     
 
 
-<b> Observations: Customers tend to buy the term deposit when they do not have a housing loan, but the conversion difference is only around 5%. 
+
+```python
+df.poutcome.value_counts()
+```
+
+
+
+
+    unknown    29078
+    failure     3509
+    other       1255
+    success      750
+    Name: poutcome, dtype: int64
+
+
+
+<b> 64% customers who bought product from previous marketing campaign will repeat their purchase again in the next market campaign, 17% more likely than in general.
 
 #### 3.2.5 Conversion rate of 'Which month the call is conducted'
 
@@ -2165,13 +1710,13 @@ plt.legend()
 
 
 
-    <matplotlib.legend.Legend at 0x7f7fb0277eb0>
+    <matplotlib.legend.Legend at 0x7fcfa38522b0>
 
 
 
 
     
-![png](output_71_1.png)
+![png](output_70_1.png)
     
 
 
@@ -2276,11 +1821,16 @@ plt.show()
 
 
     
-![png](output_73_0.png)
+![png](output_72_0.png)
     
 
 
 <b> Observations: The month of highest level of campaign calls was the May. However, the conversion rate of this month is below 10%. The most effective months (ie. highest conversion rate) are March, September, October and December with conversion rate of approxiately 50%. 
+    
+Most calls were conducted in May. However, the conversion rate of this month is below 10%. 
+
+The most effective months (ie. highest conversion rate) are March, September, October and December with conversion rate of 50%. 
+
 
 ### 4. Classification model
 
@@ -2574,7 +2124,19 @@ xgbprd = xgb_clf.predict(X_test)
 
 ### 4.3 Nested Cross Validation
 
-We have to build the best possible model for overall accuracy (without considering classification costs.) Hence, accuracy is chosen as the scoring metric.
+We have to build the best possible model for overall Precision.
+
+### Model Metrics Evaulation - False Positive or False Negative
+
+![image-2.png](attachment:image-2.png)
+
+### Model Metrics - Precision or Recall?
+
+<b>Precision:</b> Means how sure is the prediction of our model that the actual label is a "Yes". (Correctness of model)
+
+<b>Recall:</b> Is the total number of "Yes" in the label column of the dataset. So how many "Yes" labels does our model detect.
+
+In this exercise, we care about <b>Minimizing False Positive</b>, so we choose <b>Precision</b> as the metrics.
 
 
 ```python
@@ -2583,7 +2145,7 @@ inner_cv = KFold(n_splits=5, shuffle=True, random_state=10)
 outer_cv = KFold(n_splits=5, shuffle=True, random_state=11)
 
 # Defining Scoring Criteria to optimize and select best model
-score = 'accuracy'
+score = 'precision'
 
 # Outer Loop: Testing the performance of all 5 models
 dt_scores = cross_val_score(clf_dt, X = X_train, y = y_train, scoring = score, cv = outer_cv)
@@ -2602,41 +2164,41 @@ xgb_score = xgb_scores.mean()
 
 
 ```python
-print('Mean accuracy of Decision Tree:', dt_score)
+print('Mean Precision of Decision Tree:', dt_score)
 print('Standard Deviation for Decision Tree', round(np.std(dt_scores),4))
 print('')
-print('Mean accuracy of KNN:', knn_score)
+print('Mean Precision of KNN:', knn_score)
 print('Standard Deviation for KNN', round(np.std(knn_scores),4))
 print('')
-print('Mean accuracy of Logistic Regression:', lr_score)
+print('Mean Precision of Logistic Regression:', lr_score)
 print('Standard Deviation for Logistic Regression', round(np.std(lr_scores),4))
 print('')
-print('Mean accuracy of SVC:', svc_score)
+print('Mean Precision of SVC:', svc_score)
 print('Standard Deviation for SVC', round(np.std(svc_scores),4))
 print('')
-print('Mean accuracy of XGBoost:', xgb_score)
+print('Mean Precision of XGBoost:', xgb_score)
 print('Standard Deviation for XGBoost', round(np.std(xgb_scores),4))
 print('')
 ```
 
-    Mean accuracy of Decision Tree: 0.8914464218729646
-    Standard Deviation for Decision Tree 0.0029
+    Mean Precision of Decision Tree: 0.44555833977668735
+    Standard Deviation for Decision Tree 0.0149
     
-    Mean accuracy of KNN: 0.9147184017075686
-    Standard Deviation for KNN 0.0014
+    Mean Precision of KNN: 0.6366755180767842
+    Standard Deviation for KNN 0.0183
     
-    Mean accuracy of Logistic Regression: 0.9056842271591009
-    Standard Deviation for Logistic Regression 0.0028
+    Mean Precision of Logistic Regression: 0.5722431516635644
+    Standard Deviation for Logistic Regression 0.0513
     
-    Mean accuracy of SVC: 0.8586346569404737
-    Standard Deviation for SVC 0.0054
+    Mean Precision of SVC: 0.237026081295929
+    Standard Deviation for SVC 0.016
     
-    Mean accuracy of XGBoost: 0.9205363901368203
-    Standard Deviation for XGBoost 0.0037
+    Mean Precision of XGBoost: 0.6333992567809291
+    Standard Deviation for XGBoost 0.0249
     
 
 
-Comparing Accuracy of all the Parameter Tuned models in a 5 fold Cross Validation, XGBoost shows the highest mean performance for Accuracy. Hence, XGBoost is chosen as the best model for this problem.
+Comparing Accuracy of all the Parameter Tuned models in a 5 fold Cross Validation, XGBoost shows the highest mean performance for Precision. Hence, XGBoost is chosen as the best model for this problem.
 
 ### 4.4 Model Evaluation - XGBoost
 
@@ -2651,7 +2213,7 @@ from sklearn import metrics
 cnf_matrix = metrics.confusion_matrix(y_test, y_pred)
 
 print(cnf_matrix)
-print("Accuracy:",metrics.accuracy_score(y_test, y_pred))
+print("{Precision}:",metrics.precision_score(y_test, y_pred))
 
 y_pred = xgb_clf.predict(X_test)
 plot_confusion_matrix(xgb_clf, X_test, y_test)
@@ -2660,28 +2222,28 @@ plt.show()
 
     [[6096  101]
      [ 599  123]]
-    Accuracy: 0.8988293105940165
+    {Precision}: 0.5491071428571429
 
 
 
     
-![png](output_105_1.png)
+![png](output_107_1.png)
     
 
+
+![image.png](attachment:image.png)
 
 <b> Analyzing the confusion matrix: </b>
 
 Looking at the confusion matrix which we got from all the models, there are two types of wrong values:
 
-False Positive:- It means that the client do not subscribed to the term deposit , but the model thinks he did. False Negative :- It means that the client subscribed to the term deposit , but the model said he don't.
+False Positive: Customer did not buy the product, but model predicted as “Buy” 
+ 
+Trade off / Consequence: The bank made a call and spent possibly 5 minutes on a customer that eventually did not buy the product
 
-The False positive data is more dangerous as we will interpret wrong notion about the client but in reality he is not our client.
-
-The False negative data observations are not good but it can be ok , we have that client and in the future we'll discovery that in truth he's already our client.
-
-So, our objective here, is to find the best model by confusion matrix with the lowest False Positive as possible.
-
-The number false positives and false negatives is quite similar in the confusion matrix. Most of the predictions made by the model are correct.
+False Negative: Customer intended to buy the product, but model predicted as “Not buy” 
+ 
+Trade off / Consequence: The bank did not make the call based on the prediction outcome, eventually lost the potential revenue of purchase from the customer.
 
 #### 4.4.2 Classification Report for best model
 
@@ -2731,7 +2293,7 @@ plt.show()
 
 
     
-![png](output_113_0.png)
+![png](output_115_0.png)
     
 
 
@@ -2814,8 +2376,3 @@ The month of highest level of campaign calls was the May. However, the conversio
 <b>3. Call Duration: </b><br>
 
 We can see the call duration of '15-30 mins' and 'Above 30 mins' are the most effective - with more than half of the customers would end up buy a term deposit. The bank should train the marketing people on effectively closing deals when the call duration is more than 15 minutes, which would allow that the conversion rate of the next marketing campaign to be highly successful.<br>
-
-
-```python
-
-```
