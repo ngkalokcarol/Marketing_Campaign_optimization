@@ -472,11 +472,8 @@ plt.pie(ratio, autopct='%1.2f%%',
 plt.title('Before removing NULL values', fontdict = {'fontsize':'14'})
 plt.axis('square');
 ```
-
-
     
-![png](output_17_0.png)
-    
+![output_17_0](https://user-images.githubusercontent.com/50436546/204369957-769f571b-6cfd-46c6-8de9-73d0d04aca98.png)
 
 
 
@@ -490,13 +487,9 @@ plt.pie(ratio, autopct='%1.2f%%',
         startangle = 60, wedgeprops = {'width' : 0.65}, textprops={'fontsize': 14}, labels = ['No', 'Yes'])
 plt.title('After removing NULL values', fontdict = {'fontsize':'14'})
 plt.axis('square');
-```
+```    
 
-
-    
-![png](output_18_0.png)
-    
-
+![output_18_0](https://user-images.githubusercontent.com/50436546/204369985-fec16a52-7832-4f8a-a5bf-257ed97fa8a7.png)
 
 
 ```python
@@ -748,11 +741,8 @@ plt.pie(ratio, autopct='%1.2f%%',
 plt.title('Customers who bought term deposit after the campaign call', fontdict = {'fontsize':'14'})
 plt.axis('square');
 ```
+![output_28_0](https://user-images.githubusercontent.com/50436546/204370013-70ceaf95-bd98-4a30-b67b-c42728faa905.png)
 
-
-    
-![png](output_28_0.png)
-    
 
 
 The class is highly imbalance - with 90.04% as 'No' and only 9.96% as 'Yes', which means - 
@@ -771,10 +761,7 @@ numeric.hist(bins=20, figsize=(16,10), color='#00EAFF')
 plt.show()
 ```
 
-
-    
-![png](output_31_0.png)
-    
+![output_31_0](https://user-images.githubusercontent.com/50436546/204370034-55f5515b-db69-4d3d-878b-038d65676e5a.png)
 
 
 #### 3.1.3 Numeric variables correlation matrix
@@ -792,10 +779,7 @@ plt.title('Correlation Matrix')
 plt.show()
 ```
 
-
-    
-![png](output_33_0.png)
-    
+![output_33_0](https://user-images.githubusercontent.com/50436546/204370056-b3caee5e-9416-43e1-b213-767bd2c42568.png)
 
 
 To investigate more about correlation, a correlation matrix was plotted with all numberic variables. The call "duration" and "target variable" has a relatively strong correlation. That makes sense, the longer customer stay on the call, the more likely they will get solicited to buy the product. Lets dive deeper. There is a moderate correlation with “previous contacts”, “balance”, “month of contact” and “number of campaign”. 
@@ -974,10 +958,7 @@ ax.legend(bbox_to_anchor=(1.05, 1.0), loc='upper left')
 plt.show()
 ```
 
-
-    
-![png](output_40_0.png)
-    
+![output_40_0](https://user-images.githubusercontent.com/50436546/204370075-f52c3f0b-7498-4e32-bbdd-f2ad5b8daea8.png)
 
 
 <b> Observations: From the graph we can see the call duration of '15-30 mins' and 'Above 30 mins' are the most effective - with more than half of the customers would end up buy a term deposit.
@@ -1144,10 +1125,7 @@ ax.legend(bbox_to_anchor=(1.05, 1.0), loc='upper left')
 plt.show()
 ```
 
-
-    
-![png](output_45_0.png)
-    
+![output_45_0](https://user-images.githubusercontent.com/50436546/204370108-8207522a-c3bf-4309-8399-6828f3b11789.png)
 
 
 <b> Observations: 96% of clients fall in age range of 20-60, the converstion rate is best for the age group 'Above 60' with 30% conversion, 'Below 30' seconds with a 18% conversion.
@@ -1237,13 +1215,9 @@ ax.legend(bbox_to_anchor=(1.05, 1.0), loc='upper left')
 
 plt.show()
 ```
-
+![output_50_0](https://user-images.githubusercontent.com/50436546/204370134-aa412856-1876-4a17-a360-6e10fa779afc.png)
 
     
-![png](output_50_0.png)
-    
-
-
 <b> Observations: The variations in conversion rate per account balance is not quite apparent, most of the balance groups have a 15-18% conversion rate. the more the balance, the higher the conversion rate.
 
 #### 3.2.4 Conversion rate of 'Job category'
@@ -1462,11 +1436,8 @@ ax.legend(bbox_to_anchor=(1.05, 1.0), loc='upper left')
 
 plt.show()
 ```
-
-
     
-![png](output_56_0.png)
-    
+![output_56_0](https://user-images.githubusercontent.com/50436546/204370220-12cef727-d3b9-4cb6-8437-2001d16d1aa7.png)
 
 
 <b> Observations: In overall data, students and retirees are much more likely to open term deposit. 45% of clients above 60 years of age agreed to open term deposit. But we have only 2.5% of customers in this age group. It is recommended to include more of students, retirees and customers older than 60 years old to get a more targeted exposure from direct call marketing. 
@@ -1581,11 +1552,8 @@ ax.legend(bbox_to_anchor=(1.05, 1.0), loc='upper left')
 plt.title('Conversion rate of buying term deposit', fontdict = {'fontsize':'14'})
 plt.show()
 ```
-
-
     
-![png](output_62_0.png)
-    
+![output_62_0](https://user-images.githubusercontent.com/50436546/204370175-1c28cd11-4d6a-4381-82f2-d8a02525f7e7.png)
 
 
 <b> Observations: Customers tend to buy the term deposit when they do not have a housing loan, but the conversion difference is only around 5%. 
@@ -1608,11 +1576,8 @@ plt.pie(ratio, autopct='%1.2f%%',
 plt.title('Previous market campaign outcome', fontdict = {'fontsize':'14'})
 plt.axis('square');
 ```
-
-
     
-![png](output_65_0.png)
-    
+![output_65_0](https://user-images.githubusercontent.com/50436546/204370271-65200c02-bad1-4d40-a0ba-0da5e4655489.png)
 
 
 
@@ -1715,10 +1680,8 @@ plt.legend()
 
 
 
-    
-![png](output_70_1.png)
-    
 
+![output_70_1](https://user-images.githubusercontent.com/50436546/204370301-be305918-7bab-4886-bdf8-db719ce3e039.png)
 
 
 ```python
@@ -1819,10 +1782,8 @@ plt.show()
 
 ```
 
+![output_72_0](https://user-images.githubusercontent.com/50436546/204370358-574c54a4-8163-4e5f-bf8c-42f412004844.png)
 
-    
-![png](output_72_0.png)
-    
 
 
 <b> Observations: The month of highest level of campaign calls was the May. However, the conversion rate of this month is below 10%. The most effective months (ie. highest conversion rate) are March, September, October and December with conversion rate of approxiately 50%. 
@@ -2128,7 +2089,8 @@ We have to build the best possible model for overall Precision.
 
 ### Model Metrics Evaulation - False Positive or False Negative
 
-![image-2.png](attachment:image-2.png)
+![Screen Shot 2022-11-28 at 1 52 00 PM](https://user-images.githubusercontent.com/50436546/204370742-007b6763-5d10-411d-809d-cbaf469d8006.png)
+
 
 ### Model Metrics - Precision or Recall?
 
@@ -2225,13 +2187,11 @@ plt.show()
     {Precision}: 0.5491071428571429
 
 
-
     
-![png](output_107_1.png)
-    
+![output_107_1](https://user-images.githubusercontent.com/50436546/204370400-53cbdb30-7a38-445e-b347-185521894708.png)
 
 
-![image.png](attachment:image.png)
+<img width="457" alt="image" src="https://user-images.githubusercontent.com/50436546/204370898-022dea82-09a2-4bab-9beb-c84bb3cd87b2.png">
 
 <b> Analyzing the confusion matrix: </b>
 
@@ -2292,10 +2252,7 @@ plt.show()
 ```
 
 
-    
-![png](output_115_0.png)
-    
-
+![output_115_0](https://user-images.githubusercontent.com/50436546/204370432-4a7e5beb-8306-426e-b3e7-e0062d3b9e51.png)
 
 The ROC curve of the XGBoost Model is close to a perfect classifier. It performs much better than a random classifier.
 
