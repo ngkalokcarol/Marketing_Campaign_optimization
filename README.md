@@ -473,8 +473,7 @@ plt.title('Before removing NULL values', fontdict = {'fontsize':'14'})
 plt.axis('square');
 ```
     
-![output_17_0](https://user-images.githubusercontent.com/50436546/204369957-769f571b-6cfd-46c6-8de9-73d0d04aca98.png)
-
+![image](https://user-images.githubusercontent.com/50436546/204633096-93b5fd3e-3e83-4aba-aadc-f9c3864c6514.png)
 
 
 ```python
@@ -489,8 +488,7 @@ plt.title('After removing NULL values', fontdict = {'fontsize':'14'})
 plt.axis('square');
 ```    
 
-![output_18_0](https://user-images.githubusercontent.com/50436546/204369985-fec16a52-7832-4f8a-a5bf-257ed97fa8a7.png)
-
+![image](https://user-images.githubusercontent.com/50436546/204633113-3f5f7593-2e1a-42b7-af5b-0d9cdc00937b.png)
 
 ```python
 # Remove Null values and drop NaN
@@ -741,8 +739,7 @@ plt.pie(ratio, autopct='%1.2f%%',
 plt.title('Customers who bought term deposit after the campaign call', fontdict = {'fontsize':'14'})
 plt.axis('square');
 ```
-![output_28_0](https://user-images.githubusercontent.com/50436546/204370013-70ceaf95-bd98-4a30-b67b-c42728faa905.png)
-
+![image](https://user-images.githubusercontent.com/50436546/204633169-0ff66d8b-a93f-4423-aaf9-cba0e19328c6.png)
 
 
 The class is highly imbalance - with 90.04% as 'No' and only 9.96% as 'Yes', which means - 
@@ -757,12 +754,11 @@ The class is highly imbalance - with 90.04% as 'No' and only 9.96% as 'Yes', whi
 
 plt.style.use('seaborn-whitegrid')
 
-numeric.hist(bins=20, figsize=(16,10), color='#00EAFF')
+numeric.hist(bins=20, figsize=(16,10), color='#657FAE')
 plt.show()
 ```
 
-![output_31_0](https://user-images.githubusercontent.com/50436546/204370034-55f5515b-db69-4d3d-878b-038d65676e5a.png)
-
+![image](https://user-images.githubusercontent.com/50436546/204633195-f6969ec3-761d-420d-bb26-99262ef81ba8.png)
 
 #### 3.1.3 Numeric variables correlation matrix
 
@@ -770,7 +766,7 @@ plt.show()
 ```python
 corr = numeric.corr()
 
-cor_plot = sns.heatmap(corr,annot=True,cbar = True, cmap='Greens',linewidths=0.2,annot_kws={'size':10})
+cor_plot = sns.heatmap(corr,annot=True,cbar = True, cmap='twilight',linewidths=0.2,annot_kws={'size':10})
 fig=plt.gcf()
 fig.set_size_inches(6,5)
 plt.xticks(fontsize=10,rotation=-30)
@@ -779,7 +775,7 @@ plt.title('Correlation Matrix')
 plt.show()
 ```
 
-![output_33_0](https://user-images.githubusercontent.com/50436546/204370056-b3caee5e-9416-43e1-b213-767bd2c42568.png)
+![image](https://user-images.githubusercontent.com/50436546/204633408-f5ad6d0d-cc80-4084-a047-f19ba1ddff2c.png)
 
 
 To investigate more about correlation, a correlation matrix was plotted with all numberic variables. The call "duration" and "target variable" has a relatively strong correlation. That makes sense, the longer customer stay on the call, the more likely they will get solicited to buy the product. Lets dive deeper. There is a moderate correlation with “previous contacts”, “balance”, “month of contact” and “number of campaign”. 
@@ -958,7 +954,7 @@ ax.legend(bbox_to_anchor=(1.05, 1.0), loc='upper left')
 plt.show()
 ```
 
-![output_40_0](https://user-images.githubusercontent.com/50436546/204370075-f52c3f0b-7498-4e32-bbdd-f2ad5b8daea8.png)
+![image](https://user-images.githubusercontent.com/50436546/204633477-3bccf986-972a-4f40-aa93-0f6eb1b0694c.png)
 
 
 <b> Observations: From the graph we can see the call duration of '15-30 mins' and 'Above 30 mins' are the most effective - with more than half of the customers would end up buy a term deposit.
@@ -1125,7 +1121,7 @@ ax.legend(bbox_to_anchor=(1.05, 1.0), loc='upper left')
 plt.show()
 ```
 
-![output_45_0](https://user-images.githubusercontent.com/50436546/204370108-8207522a-c3bf-4309-8399-6828f3b11789.png)
+![image](https://user-images.githubusercontent.com/50436546/204633507-1ac69194-fd08-4057-ad8e-2a0a714affa9.png)
 
 
 <b> Observations: 96% of clients fall in age range of 20-60, the converstion rate is best for the age group 'Above 60' with 30% conversion, 'Below 30' seconds with a 18% conversion.
@@ -1215,8 +1211,8 @@ ax.legend(bbox_to_anchor=(1.05, 1.0), loc='upper left')
 
 plt.show()
 ```
-![output_50_0](https://user-images.githubusercontent.com/50436546/204370134-aa412856-1876-4a17-a360-6e10fa779afc.png)
 
+![image](https://user-images.githubusercontent.com/50436546/204633539-9174b568-b7c8-4054-a231-414391cf97d3.png)
     
 <b> Observations: The variations in conversion rate per account balance is not quite apparent, most of the balance groups have a 15-18% conversion rate. the more the balance, the higher the conversion rate.
 
@@ -1437,7 +1433,7 @@ ax.legend(bbox_to_anchor=(1.05, 1.0), loc='upper left')
 plt.show()
 ```
     
-![output_56_0](https://user-images.githubusercontent.com/50436546/204370220-12cef727-d3b9-4cb6-8437-2001d16d1aa7.png)
+![image](https://user-images.githubusercontent.com/50436546/204633585-d7e0fd01-2a27-4318-8d8a-e5125f2a7f90.png)
 
 
 <b> Observations: In overall data, students and retirees are much more likely to open term deposit. 45% of clients above 60 years of age agreed to open term deposit. But we have only 2.5% of customers in this age group. It is recommended to include more of students, retirees and customers older than 60 years old to get a more targeted exposure from direct call marketing. 
@@ -1553,7 +1549,7 @@ plt.title('Conversion rate of buying term deposit', fontdict = {'fontsize':'14'}
 plt.show()
 ```
     
-![output_62_0](https://user-images.githubusercontent.com/50436546/204370175-1c28cd11-4d6a-4381-82f2-d8a02525f7e7.png)
+![image](https://user-images.githubusercontent.com/50436546/204633765-e7c62e83-cca0-46db-a9df-632b375a9218.png)
 
 
 <b> Observations: Customers tend to buy the term deposit when they do not have a housing loan, but the conversion difference is only around 5%. 
@@ -1571,13 +1567,13 @@ ratio = py_df.poutcome.value_counts()
 plt.figure(figsize = (4,4))
 
 plt.pie(ratio, autopct='%1.2f%%', 
-        pctdistance = 0.6, colors = ['#00EAFF', '#9B9699', '#B2C1C3'],
+        pctdistance = 0.6, colors = ['#657FAE', '#9B9699', '#B2C1C3'],
         startangle = 60, wedgeprops = {'width' : 0.65}, textprops={'fontsize': 14}, labels =  ['success','failure','other'])
 plt.title('Previous market campaign outcome', fontdict = {'fontsize':'14'})
 plt.axis('square');
 ```
     
-![output_65_0](https://user-images.githubusercontent.com/50436546/204370271-65200c02-bad1-4d40-a0ba-0da5e4655489.png)
+![image](https://user-images.githubusercontent.com/50436546/204633799-1ea41aa1-78e7-43ba-8613-0c920af5a817.png)
 
 
 
@@ -1655,14 +1651,14 @@ y2 = total_no
 y3 = total_call
 
 
-plt.plot(x1, y3, label='Total # of calls', color = '#B6E9B6')
-plt.fill_between(x1, y3, color = '#B6E9B6', alpha = 0.6) 
+plt.plot(x1, y3, label='Total # of calls', color = '#421DA4')
+plt.fill_between(x1, y3, color = '#421DA4') 
 
 plt.plot(x1, y2, label='No', color = '#B2C1C3')
-plt.fill_between(x1, y2, color = '#B2C1C3', alpha = 0.8)
+plt.fill_between(x1, y2, color = '#B2C1C3')
 
-plt.plot(x1, y1, label='Yes', color = '#00EAFF')
-plt.fill_between(x1, y1, color = '#00EAFF')
+plt.plot(x1, y1, label='Yes', color = '#657FAE')
+plt.fill_between(x1, y1, color = '#657FAE')
 
   
 plt.xlabel('Months')
@@ -1681,7 +1677,7 @@ plt.legend()
 
 
 
-![output_70_1](https://user-images.githubusercontent.com/50436546/204370301-be305918-7bab-4886-bdf8-db719ce3e039.png)
+![image](https://user-images.githubusercontent.com/50436546/204633910-4b79a444-c210-42b4-b09f-a0685e8f78be.png)
 
 
 ```python
@@ -1771,7 +1767,7 @@ width = 0.5       # the width of the bars: can also be len(x) sequence
 
 fig, ax = plt.subplots()
 
-ax.bar(labels, yes, width, label='yes', color = '#00EAFF')
+ax.bar(labels, yes, width, label='yes', color = '#657FAE')
 ax.bar(labels, no, width, bottom=yes, label='no', color = '#B2C1C3')
 
 ax.legend(bbox_to_anchor=(1.05, 1.0), loc='upper left')
@@ -1782,8 +1778,7 @@ plt.show()
 
 ```
 
-![output_72_0](https://user-images.githubusercontent.com/50436546/204370358-574c54a4-8163-4e5f-bf8c-42f412004844.png)
-
+![image](https://user-images.githubusercontent.com/50436546/204633955-28cbc267-d16f-4285-9c49-bd605715805e.png)
 
 
 <b> Observations: The month of highest level of campaign calls was the May. However, the conversion rate of this month is below 10%. The most effective months (ie. highest conversion rate) are March, September, October and December with conversion rate of approxiately 50%. 
@@ -2178,7 +2173,9 @@ print(cnf_matrix)
 print("{Precision}:",metrics.precision_score(y_test, y_pred))
 
 y_pred = xgb_clf.predict(X_test)
-plot_confusion_matrix(xgb_clf, X_test, y_test)
+plot_confusion_matrix(xgb_clf, X_test, y_test,
+                      cmap = 'Blues',
+                     display_labels=['Yes', 'No'])
 plt.show()
 ```
 
@@ -2186,11 +2183,9 @@ plt.show()
      [ 599  123]]
     {Precision}: 0.5491071428571429
 
+![image](https://user-images.githubusercontent.com/50436546/204634112-c2c6a128-e35a-4ecf-8e40-7aaf14ebd8a6.png)
 
     
-![output_107_1](https://user-images.githubusercontent.com/50436546/204370400-53cbdb30-7a38-445e-b347-185521894708.png)
-
-
 <img width="457" alt="image" src="https://user-images.githubusercontent.com/50436546/204370898-022dea82-09a2-4bab-9beb-c84bb3cd87b2.png">
 
 <b> Analyzing the confusion matrix: </b>
@@ -2235,24 +2230,23 @@ y_probs = xgb_clf.predict_proba(X_test)[:,1]
 # Finding stats for ROC Curve
 from sklearn.metrics import roc_curve, roc_auc_score
 fpr, tpr, threshold = roc_curve(y_test, y_probs)
+auc = metrics.roc_auc_score(y_test, y_probs)
 ```
 
 
 ```python
-# ROC Curve
-
-plt.figure(figsize=(6,6))
-plt.title('Receiver Operating Characteristic - XGBoost')
-plt.plot(fpr, tpr)
-plt.plot([0, 1], ls="--")
-plt.plot([0, 0], [1, 0] , c=".7"), plt.plot([1, 1] , c=".7")
+# Plotting ROC Curve
+plt.title('ROC Curve - XGBoost')
+plt.plot(fpr,tpr, label="AUC="+str(round(auc, 2)), color = '#657FAE')
 plt.ylabel('True Positive Rate')
 plt.xlabel('False Positive Rate')
+plt.plot([0, 1], ls="--", label = 'Random guess', color = 'red')
+plt.legend(loc=4)
 plt.show()
 ```
 
 
-![output_115_0](https://user-images.githubusercontent.com/50436546/204370432-4a7e5beb-8306-426e-b3e7-e0062d3b9e51.png)
+![image](https://user-images.githubusercontent.com/50436546/204634259-8c7c3a6e-690d-4361-a47d-ee29b245fb9b.png)
 
 The ROC curve of the XGBoost Model is close to a perfect classifier. It performs much better than a random classifier.
 
